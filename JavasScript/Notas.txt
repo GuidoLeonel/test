@@ -1,0 +1,10 @@
+- Algoritmo: es un conjunto de procedimientos o funciones ordenados que se necesitan para realizar una operacion o accion. Son pasos finitos, no infinitos. Es una secuendia de pasos ordenados, que es controlable. 
+    Nos sirven para resolver problemas, pensando los distintos aspectos de los problemas que se presenten, en diferentes pasos, desmenuzarlo, para permitirnos resolverlo en uno o mas algoritmos mas chicos. 
+
+- Typescript es una "extension" de JS, que es de tipado fuerte, lo cual quiere decir requiere que declaremos que tipo de datos son los que estamos manejando o ingresando. 
+
+- Las variables en JS tienen la capacidad de ser reasignadas en cualquier momento. 
+
+- Cunado declaramos una variable con "const" debemos inicializarla en el momento en que la declaramos. 
+
+- 
