@@ -323,7 +323,7 @@ console.log(persona1); */
 const fitito = new Auto("fiat", "600", 500000);
 console.log(fitito); */
 
-class Libro {
+/* class Libro {
   constructor(autor, titulo, precio) {
     this.autor = autor;
     this.titulo = titulo;
@@ -337,9 +337,10 @@ class Libro {
 }
 
 const libro1 = new Libro("Liliana Bodok", "Los Tiempos del Venado", "$7600"); //declaro un nuevo objeto
-libro1.mostrarInfoLibro(); // Llamo al metodo personalizado dentro del objeto.
+libro1.mostrarInfoLibro(); // Llamo al metodo personalizado dentro del objeto. */
 
-function agregarLibroClass() {
+// FUNCION PARA CREAR OBJETOS A PARTIR DE INGRESO DE DATOS
+/* function agregarLibroClass() {
   let autorIngresado = prompt("Ingrese el nombre del autor");
   let tituloIngresado = prompt("Ingrese el título del libro");
   let precioIngresado = parseInt(prompt("Ingrese el valor del libro"));
@@ -348,6 +349,5 @@ function agregarLibroClass() {
     tituloIngresado,
     precioIngresado
   );
-  libroNuevo.mostrarInfoLibro();
 }
-agregarLibroClass();
+agregarLibroClass(); */
