@@ -259,6 +259,55 @@ function validacion(cadena) {
 }
  */
 
+class Negocio {
+  constructor(nombre, direccion, propietario, rubro) {
+    this.nombre = nombre;
+    this.direccion = direccion;
+    this.propietario = propietario;
+    this.rubro = rubro;
+  }
+}
+
+const local1 = new Negocio(
+  "Kuda",
+  "Luther King 70",
+  "Lorena Coll",
+  "Desarrollo Web"
+);
+const local2 = new Negocio(
+  "Grandma",
+  "Ruben Dario 1551",
+  "Leonel Puyo",
+  "Electricidad"
+);
+const local3 = new Negocio(
+  "Arcangel Gabriel",
+  "Ruben Dario 1551",
+  "Cintia Lopez",
+  "Medicina Alternativa"
+);
+/* console.log(local1);
+console.log(local2);
+console.log(local3); */
+
+function ingresarLocal() {
+  let nombreLocal = prompt("Ingresar nombre del local");
+  let direccionLocal = prompt("Ingresar direccion del local");
+  let propietarioLocal = prompt("Ingresar nombre del propietario local");
+  let rubroLocal = prompt("Ingresar rubro del local");
+  const nuevoLocal = new Negocio(
+    nombreLocal,
+    direccionLocal,
+    propietarioLocal,
+    rubroLocal
+  );
+  console.log(nuevoLocal);
+}
+const nuevosLocales = [];
+for (i = 1; i <= 5; i++) {
+  nuevosLocales.push(ingresarLocal());
+}
+console.log(nuevosLocales);
 // --------------- CICLO FOR ---------------
 
 //RESTO DE DIVISION POR 3
