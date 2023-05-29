@@ -135,6 +135,130 @@ for (i = 1; i < 11; i++) {
 }
 alert(lista); */
 
+/* 
+let listaDeProductos = "";
+let flag = true;
+while (flag) {
+  let consultaProducto =
+    prompt(`Ingrese el producto deseado con su respectivo número:
+  1-Tomate
+  2-Papa
+  3-Carne
+  4-Pollo`);
+  if (consultaProducto == 1) {
+    listaDeProductos = listaDeProductos + " tomate";
+    console.log(listaDeProductos);
+    alert("Elegiste Tomate");
+  } else if (consultaProducto == 2) {
+    listaDeProductos = listaDeProductos + " papa";
+    console.log(listaDeProductos);
+    alert("Elegiste Papa");
+  } else if (consultaProducto == 3) {
+    listaDeProductos = listaDeProductos + " carne";
+    console.log(listaDeProductos);
+    alert("Elegiste Carne");
+  } else if (consultaProducto == 4) {
+    listaDeProductos = listaDeProductos + " pollo";
+    console.log(listaDeProductos);
+    alert("Elegiste Pollo");
+  } else if (consultaProducto.toUpperCase() === "ESC") {
+    alert(`Tu lista de productos esta conformada por: ${listaDeProductos}`);
+    flag = false;
+  }
+}
+ */
+
+/* function entrada(palabra) {
+  console.log(palabra);
+}
+console.log(entrada("hola"));
+function procesamiento(num) {
+  return num * num * num;
+}
+console.log(procesamiento(7));
+function salida(palabra) {
+  palabra = prompt("ingrese nombre");
+  alert(`hola ${palabra}`);
+}
+salida() */
+
+/* const numeroRedondo = function () {
+  for (let i = 0; i <= 5; i++) {
+    let num = parseFloat(prompt("Ingrese un numero decimal"));
+    let numRedondo = Math.round(num);
+    console.log(numRedondo);
+  }
+  return numRedondo;
+};
+numeroRedondo();
+ */
+
+/* 
+function impuesto() {
+  impuestos = parseInt(prompt("Ingresar valor impuesto"));
+  porcentaje = parseInt(prompt("Ingresar tasa de interes"));
+  porcentaje = porcentaje / 100;
+  total = impuestos * porcentaje;
+  console.log(impuestos + total);
+  return alert(
+    `El total de su impuesto sumado a la tasa de interes ingresada es: ${
+      impuestos + total
+    }`
+  );
+}
+for (i = 1; i <= 5; i++) {
+  impuesto();
+} */
+
+/* 
+let flag = true;
+while (flag) {
+  let consulta = prompt(`Seleccione:
+  1- Transformar Pesos a Dolares
+  2- Transformar Dolares a Pesos
+  ESC para salir`);
+  switch (consulta) {
+    case "1":
+      monto = parseInt(prompt("Ingrese Monto"));
+      cotizarDolar(monto);
+      break;
+    case "2":
+      monto = parseInt(prompt("Ingrese Monto"));
+      cotizarPesos(monto);
+      break;
+    case "ESC":
+      flag = false;
+      break;
+  }
+}
+function cotizarDolar(pesos) {
+  alert(`El total seria de ${Math.round(pesos / 470)} dolares`);
+  return console.log(`El total seria de ${Math.round(pesos / 470)} dolares`);
+}
+function cotizarPesos(dolares) {
+  alert(`El total seria de ${Math.round(dolares * 470)} pesos`);
+  return console.log(`El total seria de ${Math.round(dolares * 470)} pesos`);
+}
+ */
+
+/* let bandera = true;
+while (bandera) {
+  validacion();
+}
+
+function validacion(cadena) {
+  cadena = prompt("Escribir algo");
+  if (cadena.toUpperCase() === "ESC") {
+    bandera = false;
+  } else if (cadena === "") {
+    console.log(`Vuelva a intentarlo`);
+    return false;
+  } else {
+    console.log(`Gracias por su mensaje: ${cadena}`);
+  }
+}
+ */
+
 // --------------- CICLO FOR ---------------
 
 //RESTO DE DIVISION POR 3
