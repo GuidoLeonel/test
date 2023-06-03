@@ -7,4 +7,15 @@
 
 - Cunado declaramos una variable con "const" debemos inicializarla en el momento en que la declaramos. 
 
+
+------------------- ARREGLOS ------------------- 
+
+- La potenciación de nuestro código va a ser cuando combinemos arras con objetos. 
+
+- Un array es un tipo de dato que sirve para almacenar datos en forma de lista. Es decir que podemos almacenar datos en un determinado orden. Podemos meterle cualquier tipo de datos. 
+
+- Nos sirve para agrupar ciertos elementos o datos que luego usaremos. 
+
+- Los arras comienzan su identación desde el 0, es muy importante tenerlo en cuenta ya que a la hora de recorrerlos tenemos que tener esto en cuenta. 
+
 - 

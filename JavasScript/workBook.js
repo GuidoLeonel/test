@@ -259,55 +259,93 @@ function validacion(cadena) {
 }
  */
 
-class Negocio {
+class Tienda {
   constructor(nombre, direccion, propietario, rubro) {
     this.nombre = nombre;
     this.direccion = direccion;
     this.propietario = propietario;
     this.rubro = rubro;
   }
+  estaAbierto(hora) {
+    if (hora >= 0 && hora <= 22) {
+      if ((hora >= 8 && hora <= 12) || (hora >= 15 && hora <= 19)) {
+        alert("ABIERTO");
+      } else {
+        alert("CERRADO");
+      }
+    } else {
+      alert("Para nosotros no existe ese horario");
+    }
+  }
+  esPropietario(nombrePropietario) {
+    if (nombrePropietario === this.propietario) {
+      alert("CORRECTO");
+    } else {
+      alert("INCORRECTO");
+    }
+  }
 }
-
-const local1 = new Negocio(
-  "Kuda",
-  "Luther King 70",
-  "Lorena Coll",
+const tiendaUno = new Tienda("Lo de Guido", "Idia 2485", "Guido", "Fotografia");
+const tiendaDos = new Tienda(
+  "Lo de Marta",
+  "Idia 2485",
+  "Marta",
+  "Dulces Caseros"
+);
+const tiendaTres = new Tienda(
+  "Lo de Dalit",
+  "Idia 2485",
+  "Dalit",
   "Desarrollo Web"
 );
-const local2 = new Negocio(
-  "Grandma",
-  "Ruben Dario 1551",
-  "Leonel Puyo",
-  "Electricidad"
-);
-const local3 = new Negocio(
-  "Arcangel Gabriel",
-  "Ruben Dario 1551",
-  "Cintia Lopez",
-  "Medicina Alternativa"
-);
-/* console.log(local1);
-console.log(local2);
-console.log(local3); */
 
-function ingresarLocal() {
-  let nombreLocal = prompt("Ingresar nombre del local");
-  let direccionLocal = prompt("Ingresar direccion del local");
-  let propietarioLocal = prompt("Ingresar nombre del propietario local");
-  let rubroLocal = prompt("Ingresar rubro del local");
-  const nuevoLocal = new Negocio(
-    nombreLocal,
-    direccionLocal,
-    propietarioLocal,
-    rubroLocal
+// - Aca comienza el bloque para funcion que guarda objetos en un array
+const nuevoArray = [];
+
+function agregarTiendaClass() {
+  nombreIngresado = prompt("Ingresar NOMBRE");
+  direccionIngresado = prompt("Ingresar DIRECCION");
+  propietarioIngresado = prompt("Ingresar PROPIETARIO");
+  rubroIngresado = prompt("Ingresar RUBRO");
+  const nuevaTienda = new Tienda(
+    nombreIngresado,
+    direccionIngresado,
+    propietarioIngresado,
+    rubroIngresado
   );
-  console.log(nuevoLocal);
+  nuevoArray.push(nuevaTienda);
 }
-const nuevosLocales = [];
-for (i = 1; i <= 5; i++) {
-  nuevosLocales.push(ingresarLocal());
+
+function pedirUsuarioIngresarTiendas() {
+  for (i = 0; i < 5; i++) {
+    agregarTiendaClass();
+  }
+  console.log(nuevoArray);
 }
-console.log(nuevosLocales);
+// - - Aca termina el bloque de funcion que guarda objetos en un array
+
+// - Aca comienza una fucion para validar nombre de propietarios de Objetos ya definidos.
+function valdiarNombrePropietarios() {
+  for (i = 0; i < 5; i++) {
+    let nombrePropietarioIngresado = prompt("Ingrese un nombre de propietario");
+    switch (nombrePropietarioIngresado) {
+      case "Guido":
+        tiendaUno.esPropietario(nombrePropietarioIngresado);
+        break;
+      case "Marta":
+        tiendaDos.esPropietario(nombrePropietarioIngresado);
+        break;
+      case "Dalit":
+        tiendaTres.esPropietario(nombrePropietarioIngresado);
+        break;
+      default:
+        alert("INCORRECTO");
+        break;
+    }
+  }
+}
+// - - Aca termina una fucion para validar nombre de propietarios de Objetos ya definidos.
+
 // --------------- CICLO FOR ---------------
 
 //RESTO DE DIVISION POR 3

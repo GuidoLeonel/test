@@ -271,7 +271,7 @@ console.log(participante1.rol); */
 // ----------- METODOS
 // Los metodos se limitan a donde pueden ser ejecutados a la clase que se hayan creado a partir de esa clase. Tienen un dominio restringido, un campo de aplicacion restringido.
 // También los llamamos métodos personalizados porque van a funcionar dentro del ambito de creación de la función constructora.
-// En otras palabras, son funciones que escribimos dentro de un objeto la cual va a funcionar solo para dicho objeto, si tratamos de usarla con otro objeto nos va a dar error.
+// En otras palabras, son funciones que escribimos dentro de un objeto la cual va a funcionar solo para dicho objeto constructor, si tratamos de usarla con otro objeto nos va a dar error.
 //Ejemplo de uso de llamado de metodos personalizados.
 /* participante1.mostrarInfo();
 participante2.mostrarInfo();
