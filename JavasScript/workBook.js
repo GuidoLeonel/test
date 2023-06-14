@@ -288,13 +288,13 @@ class Tienda {
 const tiendaUno = new Tienda("Lo de Guido", "Idia 2485", "Guido", "Fotografia");
 const tiendaDos = new Tienda(
   "Lo de Marta",
-  "Idia 2485",
+  "India 2485",
   "Marta",
   "Dulces Caseros"
 );
 const tiendaTres = new Tienda(
   "Lo de Dalit",
-  "Idia 2485",
+  "India 2485",
   "Dalit",
   "Desarrollo Web"
 );
@@ -345,6 +345,133 @@ function valdiarNombrePropietarios() {
   }
 }
 // - - Aca termina una fucion para validar nombre de propietarios de Objetos ya definidos.
+
+//  - Aca comienza una funcion para crear objetos a partir de una funcion donde se registren clientes  su presupuesto.
+
+/* class Cliente {
+  constructor(nombre, presupuesto, tarjetaDescuento, numCelular) {
+    this.nombre = nombre;
+    this.presupuesto = presupuesto;
+    this.tarjetaDescuento = tarjetaDescuento;
+    this.numCelular = numCelular;
+  }
+  transferirDinero(valor) {
+    if (valor >= 0 && valor <= this.presupuesto) {
+      this.presupuesto = this.presupuesto - valor;
+      console.log(
+        `Se envió su transferencia, su presupuesto es de: $${this.presupuesto}`
+      );
+    } else {
+      console.log("No tiene saldo suficiente");
+    }
+  }
+}
+
+const guido = new Cliente("Guido", 100, true, 3548501503);
+const dalit = new Cliente("Dalit", 250, true, 351321654);
+const nemo = new Cliente("Emiliano", 1000, false, 351123456);
+
+function crearCliente() {
+  let nombreCliente = prompt("Ingresar nombre del Cliente");
+  let presupuestoCliente = parseInt(prompt("Ingresar presupuesto del Cliente"));
+  let descuentoCliente = prompt(
+    "Ingresar SI o NO para saber si el Cliente tiene descuento."
+  );
+  let celCliente = parseInt(prompt("Ingresar número de celular del Cliente"));
+  if (descuentoCliente.toUpperCase() === "SI") {
+    descuentoCliente = true;
+  } else {
+    descuentoCliente = false;
+  }
+  const nuevoCliente = new Cliente(
+    nombreCliente,
+    presupuestoCliente,
+    descuentoCliente,
+    celCliente
+  );
+  console.log(nuevoCliente);
+}
+
+function averiguarPresupuesto() {
+  let num = parseInt(prompt("Escriba el monto que desea averiguar"));
+  if (
+    num <= guido.presupuesto &&
+    num <= dalit.presupuesto &&
+    num <= nemo.presupuesto
+  ) {
+    alert("Todos tienen saldo suficiente");
+  } else if (num <= dalit.presupuesto && num <= nemo.presupuesto) {
+    alert("Dos clientes tienen el saldo suficiente");
+  } else if (num <= nemo.presupuesto) {
+    alert("Solo un cliente tiene el saldo suficiente");
+  }
+}
+
+for (i = 0; i < 5; i++) {
+  averiguarPresupuesto();
+} */
+
+// - - Aca termina funcion para guardar clientes  averiguar sus presupuestos
+
+const bigFour = ["Pierce", "Allen", "Garnet", "Rondo"];
+/* for (i = 0; i < bigFour.length; i++) {
+  console.log(
+    `Los integrantes del Big Four de los Celtics son: ${i} - ${bigFour[i]}`
+  );
+} */
+
+const equipo = [];
+equipo.push(bigFour);
+
+let flag = true;
+/* while (flag) {
+  let integrante = prompt(
+    "Ingrese el NOMBRE del miembro del equipo. ESC para salir"
+  );
+  if (integrante.toUpperCase() === "ESC") {
+    flag = false;
+  } else {
+    equipo.push(integrante);
+    console.log(equipo);
+  }
+} */
+
+class Jugador {
+  constructor(nombre, numCamiseta, edad, estado) {
+    this.nombre = nombre;
+    this.numCamiseta = numCamiseta;
+    this.edad = edad;
+    this.estado = estado;
+  }
+}
+const jugador1 = new Jugador("Guido", 12, 25, "Sin Lesiones");
+const jugador2 = new Jugador("Emiliano", 17, 29, "Leve Esguince");
+const jugador3 = new Jugador("Facundo", 7, 23, "Ligamentos Cortados");
+const jugador4 = new Jugador("Manuel", 23, 25, "Sin Lesiones");
+const jugador5 = new Jugador("Julian", 10, 33, "Sin Lesiones");
+
+equipo.push(jugador1, jugador2, jugador3, jugador4, jugador5);
+//console.log(equipo);
+
+function buscarJugador(equipo, jugador) {
+  let busquedaJugador = equipo.find((el) => el.nombre === jugador);
+  console.log(busquedaJugador);
+}
+
+let bandera = true;
+/* while (bandera) {
+  let nomUsuario = prompt("Que jugador está buscando?");
+  buscarJugador(equipo, nomUsuario);
+  if (nomUsuario.toUpperCase() === "ESC") {
+    bandera = false;
+  }
+} */
+
+function filtroJugadores(equipo, edad) {
+  const filtrado = equipo.filter((el) => el.edad >= edad);
+  console.log(filtrado);
+}
+// filtroJugadores(equipo, 25);
 
 // --------------- CICLO FOR ---------------
 
