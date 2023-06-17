@@ -185,9 +185,8 @@ const libro4 = new Libro(
   "Padre Rico, Padre Pobre",
   5500
 );
-const libro5 = new Libro(5, "Liliana Bodok", "Los Dias de la Sombra", 7600)
-const libro6 = new Libro(6, "Liliana Bodok", "Los Dias Del Fuego", 8000)
-
+const libro5 = new Libro(5, "Liliana Bodok", "Los Dias de la Sombra", 7600);
+const libro6 = new Libro(6, "Liliana Bodok", "Los Dias Del Fuego", 8000);
 
 //método PUSH
 const estanteria = [];
@@ -206,7 +205,7 @@ function agregarLibros(array) {
   );
   //console.log(nuevoLibro);
   array.push(nuevoLibro);
-  mostrarCatalogo(array); 
+  mostrarCatalogo(array);
 }
 
 function mostrarCatalogo(array) {
@@ -225,29 +224,33 @@ function mostrarCatalogoForEach(arr) {
   });
 }
 
-function buscarPorTitulo(array){
-  let tituloBuscado = prompt("Ingrese el titulo del libro que desea buscar").toLowerCase();
+function buscarPorTitulo(array) {
+  let tituloBuscado = prompt(
+    "Ingrese el titulo del libro que desea buscar"
+  ).toLowerCase();
   let tituloEncontrado = array.find(
     //una arrowfunction si no tiene llaves, tiene un return implicito
-    (book) => book.titulo.toLowerCase() == tituloBuscado 
-  )
-  if(tituloEncontrado == undefined){
+    (book) => book.titulo.toLowerCase() == tituloBuscado
+  );
+  if (tituloEncontrado == undefined) {
     console.log(`${tituloBuscado} no se encuentra en nuestro stock`);
   } else {
     console.log(tituloEncontrado);
   }
 }
 
-function busquedaPorAutor(arr){
-  let autorBuscado = prompt("Ingrese el nombre del autor que está buscando").toLowerCase()
+function busquedaPorAutor(arr) {
+  let autorBuscado = prompt(
+    "Ingrese el nombre del autor que está buscando"
+  ).toLowerCase();
   let busquedaAutor = arr.filter(
-  (book) => book.autor.toLowerCase() == autorBuscado
-)
-    if(busquedaAutor.length == 0){
-      console.log(`Para ${autorBuscado} no hay libros en stock`);
-    } else {
-      mostrarCatalogoForEach(busquedaAutor)
-    }
+    (book) => book.autor.toLowerCase() == autorBuscado
+  );
+  if (busquedaAutor.length == 0) {
+    console.log(`Para ${autorBuscado} no hay libros en stock`);
+  } else {
+    mostrarCatalogoForEach(busquedaAutor);
+  }
 }
 
 //EJEMPLO DE Metodo MAP
@@ -256,75 +259,72 @@ function busquedaPorAutor(arr){
 )
 console.log(productosIva); */
 
-function ordernarAlfabeticamente (array){
+function ordernarAlfabeticamente(array) {
   // copia de un array, para no modificar estanteria
-  let alfabeticamente = [].concat(array)
-  alfabeticamente.sort(
-    (a,b) => {
-      if(a.titulo < b.titulo){
-        return -1; 
-      } else if (a.titulo > b.titulo){
-        return 1; 
-      } else {
-        0
-      }
-    } 
-    )
-  mostrarCatalogo(alfabeticamente)
+  let alfabeticamente = [].concat(array);
+  alfabeticamente.sort((a, b) => {
+    if (a.titulo < b.titulo) {
+      return -1;
+    } else if (a.titulo > b.titulo) {
+      return 1;
+    } else {
+      0;
+    }
+  });
+  mostrarCatalogo(alfabeticamente);
 }
 
-function ordenarMenorMayor (array){
+function ordenarMenorMayor(array) {
   const menorMayor = [].concat(array);
-  menorMayor.sort(
-    (a,b) => a.precio - b.precio
-  )
-  mostrarCatalogo(menorMayor)
+  menorMayor.sort((a, b) => a.precio - b.precio);
+  mostrarCatalogo(menorMayor);
 }
 
-function ordenarMayorMenor (array){
+function ordenarMayorMenor(array) {
   const mayorMenor = [].concat(array);
-  mayorMenor.sort(
-    (a,b) => b.precio - a.precio
-  )
-  mostrarCatalogo(mayorMenor)
+  mayorMenor.sort((a, b) => b.precio - a.precio);
+  mostrarCatalogo(mayorMenor);
 }
 
-function ordenar(array){
-  let pregunta = parseInt(prompt(`Como le gustaría ordenar:
+function ordenar(array) {
+  let pregunta = parseInt(
+    prompt(`Como le gustaría ordenar:
   1 - Ordenar de Menor a Mayor (precio)
   2 - Ordenar de Mayor a Menor (precio)
-  3 - Ordenar Alfabeticamente`))
-  switch (pregunta){
-    case 1: 
-    ordenarMenorMayor(array)
-    break; 
-    case 2: 
-    ordenarMayorMenor(array)
-    break; 
-    case 3: 
-    ordernarAlfabeticamente(array)
-    break; 
-    default: 
-    console.log(`${pregunta} no es válido`);
-    break; 
+  3 - Ordenar Alfabeticamente`)
+  );
+  switch (pregunta) {
+    case 1:
+      ordenarMenorMayor(array);
+      break;
+    case 2:
+      ordenarMayorMenor(array);
+      break;
+    case 3:
+      ordernarAlfabeticamente(array);
+      break;
+    default:
+      console.log(`${pregunta} no es válido`);
+      break;
   }
 }
 
-function borrarLibro(array){
-  console.log(`A partir del catálogo ingrese el id del libro que desea eliminar:`);
-  for(let elem of array){
+function borrarLibro(array) {
+  console.log(
+    `A partir del catálogo ingrese el id del libro que desea eliminar:`
+  );
+  for (let elem of array) {
     console.log(`${elem.id} - ${elem.titulo} del autor/a ${elem.autor}`);
   }
-  let idEliminar = parseInt(prompt("Ingrese el ID a eliminar"))
+  let idEliminar = parseInt(prompt("Ingrese el ID a eliminar"));
   // map: copiar un array con solo los indices.
-  let arrayID = array.map((book)=> book.id)
+  let arrayID = array.map((book) => book.id);
   // indexOf: para averiguar la posicion del elemento que queremos
-  let indice = arrayID.indexOf(idEliminar)
+  let indice = arrayID.indexOf(idEliminar);
   // splice para una vez localizado el elemento, borrarlo
-  array.splice(indice, 1)
-  mostrarCatalogo(array)
+  array.splice(indice, 1);
+  mostrarCatalogo(array);
 }
-
 
 function menu() {
   let salirMenu = true;
@@ -354,7 +354,7 @@ function menu() {
         busquedaPorAutor(estanteria);
         break;
       case "6":
-        ordenar(estanteria)
+        ordenar(estanteria);
         break;
       case "0":
         console.log("Salir Menu");
@@ -368,3 +368,36 @@ function menu() {
 }
 
 //menu()
+
+// PROYECTO CON DOM
+
+// Capturo divLibros
+let librosDiv = document.getElementById("libros");
+
+//Imprimiendo los objetos en el DOM
+for (let libro of estanteria) {
+  //codigo para imprimir el array
+  //-- creamos un div padre para la card
+  let nuevoLibroDiv = document.createElement("div");
+
+  nuevoLibroDiv.innerHTML = `<article class="card">
+        <h3 class="tituloCard">Los Días del Venado</h3>
+        <img src="assets/portada-dias-venado_grande.jpg" alt="Portada Los Días del Venado">
+          <div class="content">
+            <p class="autorCard">Liliana Bodoc</p>
+            <p class="precioCard">$1500</p>
+            <a href="" target="_blank">Agregar al Carrito</a>
+          </div>
+      </article>`;
+  librosDiv.appendChild(nuevoLibroDiv);
+}
+
+/*   <article class="card">
+        <h3 class="tituloCard">Los Días del Venado</h3>
+        <img src="assets/portada-dias-venado_grande.jpg" alt="Portada Los Días del Venado">
+          <div class="content">
+            <p class="autorCard">Liliana Bodoc</p>
+            <p class="precioCard">$1500</p>
+            <a href="" target="_blank">Agregar al Carrito</a>
+          </div>
+      </article> */

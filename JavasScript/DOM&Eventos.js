@@ -12,7 +12,7 @@
 // Dentro de GET ELEMENT hay 3 maneras, acceder mediante etiquetas.
 
 // -- -- Nos devuelve un HTML Collection en forma de array.
-let etiquetasH5 = document.getElementsByTagName("h5");
+/* let etiquetasH5 = document.getElementsByTagName("h5");
 for (let nodo of etiquetasH5) {
   console.log(nodo.innerText);
 }
@@ -60,3 +60,24 @@ listaCiudades.innerHTML += `<li id="ultimaCiudad">Córdoba</li>`;
 listaCiudades.innerHTML += `<p>Fin del listado</p>`;
 
 // CLASSNAME es una propiedad que utilizamos para acceder a las clases de un nodo y poder modificar y agregar.
+listaCiudades.className = `lista formato`;
+
+// CREAR un elemento
+let nuevaLi = document.createElement("li");
+//agregarle texto a la creacion del elemento anterior
+nuevaLi.innerText = `Argentina`;
+nuevaLi.className = `nuevoPais`;
+
+// append y appendChild - metodos para agregar elementos, appendChild sirve para pasar un nodo con contenido, de otra manera nos daria error. Lo agrega al final
+listaPaises.append(nuevaLi);
+
+// prepend tambien agrega un nodo como append, pero con la diferecnai de que lo agrega al inicio.
+listaPaises.prepend(nuevaLi);
+
+//metodo remove sirve para eliminar nodos
+fraseDom.remove();
+
+let ciudades = document.getElementsByClassName("ciudades");
+console.log(ciudades);
+ciudades[0].remove();
+ */
