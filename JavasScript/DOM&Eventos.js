@@ -81,3 +81,49 @@ let ciudades = document.getElementsByClassName("ciudades");
 console.log(ciudades);
 ciudades[0].remove();
  */
+
+// ----------------------------- EVENTOS -----------------------------
+
+// Son las acciones que el usuario realiza cuando interactua con un sitio web, y nosotros los controlamos de manera que podamos gestionar la interactividad entre el usuario y el sitio web.
+
+// Cuando declaramos un evento el sitio está atento a las acciones del usuario según las reglas y las declaraciones de eventos que le damos.
+
+// Handler event: son funciones manejadoras de ventos
+
+function saludoComi34150() {
+  console.log("Que tengas un feliz Martes");
+  alert("Nuestro primer evento");
+}
+
+function saludar(nombre) {
+  alert(`Hola ${nombre} buenas tardes.`);
+}
+
+//Segunda forma semantica
+//Capturar
+let botonSemantico = document.getElementById("evento-semantico");
+let inputAlumno = document.getElementById("nombreAlumno");
+console.log(inputAlumno);
+//adjuntar evento
+//se le asigna una handler function
+//cuando asignamos una function directamente va sin parentesis
+//botonSemantico.onclick = saludoComi34150;
+// otro evento a btn semantico
+botonSemantico.onclick = () => {
+  saludar(inputAlumno.value);
+};
+console.log(inputAlumno.value);
+
+// Primera forma -- la mas recomendable
+//podemos pasar multiples eventos
+let eventoMultiples = document.getElementById("evento-multiple");
+
+//addEventListener
+//recibe dos parametros.
+// el primer parámetro es el evento que quiero que escuche
+// segundo parametro una function handler, la funcion que va a manejar el elemento
+eventoMultiples.addEventListener("click", saludoComi34150);
+
+eventoMultiples.addEventListener("click", () => {
+  saludar(inputAlumno.value);
+});

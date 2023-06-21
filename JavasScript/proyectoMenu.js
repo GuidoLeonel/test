@@ -16,7 +16,7 @@ class Libro {
 const libro1 = new Libro(
   1,
   "Liliana Bodoc",
-  "Los Tiempos del Venado",
+  "Los Días del Venado",
   7600,
   "portada-dias-venado_grande.jpg"
 );
@@ -235,6 +235,8 @@ function menu() {
 
 // Capturo divLibros
 let librosDiv = document.getElementById("libros");
+let verCatalogoBtn = document.getElementById("verCatalogo");
+let ocultarCatalogoBtn = document.getElementById("ocultarCatalogo");
 
 //Imprimiendo los objetos en el DOM
 function verCatalogo(array) {
@@ -249,14 +251,57 @@ function verCatalogo(array) {
           <div class="content">
             <p class="autorCard">${libro.autor}</p>
             <p class="precioCard">${libro.precio}</p>
-            <a href="" target="_blank">Agregar al Carrito</a>
+            <button id="agregarBtn${libro.id}" class="btn btn-outline-success ">Agregar al Carrito</button> 
           </div>
       </article>`;
     librosDiv.appendChild(nuevoLibroDiv);
+    let agregarBtn = document.getElementById(`agregarBtn${libro.id}`);
+    agregarBtn.addEventListener("click", () => {
+      console.log(
+        `Usted eligió ${libro.titulo} del autor/a ${libro.autor} que cuesta ${libro.precio}`
+      );
+    });
   }
 }
-verCatalogo(estanteria);
 
+//FORMULARIO captura
+let guardarBtn = document.getElementById("guardarLibroBtn");
+function cargarLibros(array) {
+  let inputAutor = document.getElementById("autorInput");
+  let inputTitulo = document.getElementById("tituloInput");
+  let inputPrecio = document.getElementById("precioInput");
+  // Esta funcion se encarga de agregar e ingresar datos
+  const nuevoLibro = new Libro(
+    array.length + 1,
+    inputAutor.value,
+    inputTitulo.value,
+    parseInt(inputPrecio.value),
+    "libroNuevo.jpg"
+  );
+  array.push(nuevoLibro);
+  console.log(nuevoLibro);
+  verCatalogo(array);
+  inputAutor.value = "";
+  inputTitulo.value = "";
+  inputPrecio.value = "";
+}
+guardarBtn.addEventListener("click", () => {
+  cargarLibros(estanteria);
+});
+//adjuntar los eventos luego de haberlos declarado
+verCatalogoBtn.onclick = () => {
+  verCatalogo(estanteria);
+};
+
+ocultarCatalogoBtn.addEventListener("click", () => {
+  document.getElementById("libros").style.display = `none`;
+});
+
+//probar evento input - es un evento que escucha cada cambio que se efectua dentro de linput
+let inputBuscador = document.querySelector("#buscador");
+inputBuscador.addEventListener("input", () => {
+  console.log(inputBuscador.value);
+});
 /*   <article class="card">
         <h3 class="tituloCard">Los Días del Venado</h3>
         <img src="assets/portada-dias-venado_grande.jpg" alt="Portada Los Días del Venado">
